@@ -167,5 +167,64 @@ namespace Project2._0
         {
 
         }
+        private void RefreshPage()
+        {
+            //refreshing the box
+            lbxProducts.ItemsSource = null;
+            lbxProducts.ItemsSource = allProducts;
+        }
+
+        private void rb_All_Checked(object sender, RoutedEventArgs e)
+        {
+            filteredProducts.Clear();
+            if (rb_All.IsChecked == true)
+            {
+
+                RefreshPage();
+            }
+            else if (rb_Face.IsChecked == true)
+            {
+                foreach (Items activity in allProducts)
+                {
+                    if (activity.TypeOfProduct == ProductType.Face)
+                    {
+                        filteredProducts.Add(activity);
+                        lbxProducts.ItemsSource = null;
+                        lbxProducts.ItemsSource = filteredProducts;
+
+                    }
+                }
+            }
+            else if (rb_Eyes.IsChecked == true)
+            {
+                foreach (Items activity in allProducts)
+                {
+                    if (activity.TypeOfProduct == ProductType.Eyes)
+                    {
+                        filteredProducts.Add(activity);
+                        lbxProducts.ItemsSource = null;
+                        lbxProducts.ItemsSource = filteredProducts;
+
+                    }
+                }
+            }
+            else if (rb_Lips.IsChecked == true)
+            {
+                foreach (Items activity in allProducts)
+                {
+                    if (activity.TypeOfProduct == ProductType.Lips)
+                    {
+                        filteredProducts.Add(activity);
+                        lbxProducts.ItemsSource = null;
+                        lbxProducts.ItemsSource = filteredProducts;
+
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nothing has been selected");
+            }
+        }
     }
 }

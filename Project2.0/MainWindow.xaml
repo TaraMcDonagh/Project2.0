@@ -10,43 +10,32 @@
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.5*"/>
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+
         </Grid.ColumnDefinitions>
-        <ComboBox  Grid.Row="1" Grid.Column="1" Margin="113,30,66,10">
-            <ComboBoxItem>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Name="all" >All</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock  Name="FaceProducts">Face</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock  Name="EyeProducts">Eyes</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock  Name="LipProducts">Lips</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-        </ComboBox>
-        <ListBox Name="lbxProducts" Grid.Row="2" Margin="10" />
-        <Image Source="H:\Oop\Semester 2\Project\Project2.0\Project2.0\images\BeYouTiful.jpg" Grid.Row="0" Grid.Column="0" Margin="0,14,0,50" Grid.RowSpan="2" />
+ 
+        <Image Source="H:\Oop\Semester 2\Project\Project2.0\Project2.0\images\BeYouTiful.jpg" Grid.Row="0" Grid.Column="1" Margin="0,14,0,50" Grid.RowSpan="2" />
+        
+        <ListBox Name="lbxProducts" Grid.Row="2" Grid.Column="1" Margin="10" />
+        
+        <Label Content="Items" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Refine" Grid.Row="1" Grid.Column="0"/>
 
-        <Label Content="Items" Grid.Row="1" Grid.Column="0"/>
-        <Label Content="Refine" Grid.Row="1" Grid.Column="1" Margin="117,4,66,33" Width="70" RenderTransformOrigin="1.541,-0.145"/>
+        <RadioButton x:Name="rb_All" Content="All" Grid.Column="0" Grid.Row="2" Margin="94,73,453,243" Grid.ColumnSpan="2" Checked="rb_All_Checked" />
+        <RadioButton x:Name="rb_Face" Content="Face" Grid.Column="0" Grid.Row="2" Margin="94,133,493,183" Grid.ColumnSpan="2"/>
+        <RadioButton x:Name="rb_Eyes" Content="Eyes" Grid.Column="0" Grid.Row="2" Margin="94,98,26,218" RenderTransformOrigin="0.518,1.668"/>
+        <RadioButton x:Name="rb_Lips" Content="Lips" Grid.Column="0" Grid.Row="2" Margin="94,158,66,158"/>
 
-        <Button Grid.Row="0" Grid.Column="1" Margin="207,10,10,19" Click="Button_Click">
-            <Image Source="H:\Oop\Semester 2\Project\Project2.0\Project2.0\images\cart.jpg" Width="43" />
+
+        <Button Grid.Row="0" Grid.Column="0" Margin="19,10,207,10" Click="Button_Click">
+         <Image Source="H:\Oop\Semester 2\Project\Project2.0\Project2.0\images\cart.jpg"/>
         </Button>
-        <Button Content="Add To Cart"  Name="AddToCartBtn" Grid.Row="2" Margin="48,173,48,173" Grid.Column="1" Click="AddToCartBtn_Click" />
+        <Button Content="Add To Cart"  Name="AddToCartBtn" Grid.Row="3" Grid.Column="0" Margin="5" Click="AddToCartBtn_Click" />
 
     </Grid>
 </Window>
