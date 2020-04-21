@@ -41,11 +41,11 @@ namespace Project2._0
         //Implement IComparable to sort by date, utilised by both listboxes. 
         public int CompareTo(Items other)
         {
-            if (this.TypeOfProduct == other.TypeOfProduct)
+            if (this.ProductName == other.ProductName)
             {
-                return this.ProductName.CompareTo(other.ProductName);
+                return this.Cost.CompareTo(other.Cost);
             }
-            return other.TypeOfProduct.CompareTo(this.TypeOfProduct);
+            return other.ProductName.CompareTo(this.ProductName);
         }
     }
 }

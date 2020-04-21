@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project2._0"
         mc:Ignorable="d"
-        Title="Cart" Height="450" Width="800">
+        Title="Cart" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
@@ -14,13 +14,17 @@
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="119*"/>
+            <ColumnDefinition Width="79*"/>
 
         </Grid.ColumnDefinitions>
 
         <Image Source="H:\Oop\Semester 2\Project\Project2.0\Project2.0\images\BeYouTiful.jpg" Grid.Row="0" Margin="284,10,44,2" />
-        <Button Content="Back to Shop" Grid.Row="0" Grid.Column="0" Margin="26,10,426,23" Click="Button_Click" />
+        <Button Content="Back to Shop" Grid.Row="0" Grid.Column="0" Margin="4,10,386,23" Click="Button_Click" Height="20" Width="86" />
+        <Label Content="Your Basket" Grid.Column="0" Grid.Row="1" Height="34" Margin="186,9,182,9" Width="108"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Height="34" Margin="79,254,112,26" Name="totaltbx"/>
+        <ListBox Grid.Row="2" Grid.Column="0" Margin="10"/>
+        <Button Content="Check Out" Grid.Column="1" Grid.Row="2"/>
 
     </Grid>
 </Window>

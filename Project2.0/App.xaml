@@ -37,6 +37,9 @@
         <Style TargetType="Grid">
             <Setter Property="Background" Value="Lavender"/>
         </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="Lavender"/>
+        </Style>
         
     </Application.Resources>
 </Application>

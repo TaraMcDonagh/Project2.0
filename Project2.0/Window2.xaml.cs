@@ -19,6 +19,7 @@ namespace Project2._0
     /// </summary>
     public partial class Window2 : Window
     {
+
         public Window2()
         {
             InitializeComponent();
@@ -26,6 +27,12 @@ namespace Project2._0
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
