@@ -10,32 +10,36 @@
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="3*"/>
-            <RowDefinition Height="0.5*"/>
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
 
         </Grid.ColumnDefinitions>
  
         <Image Source="H:\Oop\Semester 2\Project\Project2.0\Project2.0\images\BeYouTiful.jpg" Grid.Row="0" Grid.Column="1" Margin="0,14,0,50" Grid.RowSpan="2" />
         
-        <ListBox Name="lbxProducts" Grid.Row="2" Grid.Column="1" Margin="10" />
+        <ListBox Name="lbxProducts" Grid.Row="2" Grid.Column="1" Margin="10" SelectionChanged="lbxProducts_SelectionChanged" />
         
         <Label Content="Items" Grid.Row="1" Grid.Column="1"/>
         <Label Content="Refine" Grid.Row="1" Grid.Column="0"/>
+        <TextBox Name="NoOfItems" Grid.Row="0" Grid.Column="0"  Margin="30,30,150,10" FontFamily="Palatino Linotype"/>
 
-        <RadioButton x:Name="rb_All" Content="All" Grid.Column="0" Grid.Row="2" Margin="94,73,453,243" Grid.ColumnSpan="2" Checked="rb_All_Checked" />
-        <RadioButton x:Name="rb_Face" Content="Face" Grid.Column="0" Grid.Row="2" Margin="94,133,493,183" Grid.ColumnSpan="2"/>
-        <RadioButton x:Name="rb_Eyes" Content="Eyes" Grid.Column="0" Grid.Row="2" Margin="94,98,26,218" RenderTransformOrigin="0.518,1.668"/>
-        <RadioButton x:Name="rb_Lips" Content="Lips" Grid.Column="0" Grid.Row="2" Margin="94,158,66,158"/>
+        <RadioButton Name="rb_All" Content="All" Grid.Column="0" Grid.Row="2" Margin="40,73,40,243" Checked="rb_All_Checked" />
+        <RadioButton Name="rb_Face" Content="Face" Grid.Column="0" Grid.Row="2"  Checked="rb_All_Checked"  Margin="40,133,40,183"/>
+        <RadioButton Name="rb_Eyes" Content="Eyes" Grid.Column="0" Grid.Row="2" Margin="40,98,40,218"  Checked="rb_All_Checked"/>
+        <RadioButton Name="rb_Lips" Content="Lips" Grid.Column="0" Grid.Row="2" Margin="40,158,40,158" Checked="rb_All_Checked"/>
+        <RadioButton Name="rb_Skin" Content="Skincare" Grid.Column="0" Grid.Row="2" Margin="40,206,40,150" Checked="rb_All_Checked" />
 
 
-        <Button Grid.Row="0" Grid.Column="0" Margin="19,10,207,10" Click="Button_Click">
+
+        <Button Grid.Row="0" Grid.Column="0" Margin="10,10,100,10" Click="Button_Click">
          <Image Source="H:\Oop\Semester 2\Project\Project2.0\Project2.0\images\cart.jpg"/>
         </Button>
-        <Button Content="Add To Cart"  Name="AddToCartBtn" Grid.Row="3" Grid.Column="0" Margin="5" Click="AddToCartBtn_Click" />
+        <Button Content="Add To Cart"  Name="AddToCartBtn" Grid.Row="2" Grid.Column="2" Margin="5" Click="AddToCartBtn_Click" />
 
     </Grid>
 </Window>
+    

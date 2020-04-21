@@ -1,0 +1,26 @@
+﻿<Window x:Class="Project2._0.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project2._0"
+        mc:Ignorable="d"
+        Title="Cart" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="3*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Image Source="H:\Oop\Semester 2\Project\Project2.0\Project2.0\images\BeYouTiful.jpg" Grid.Row="0" Margin="284,10,44,2" />
+        <Button Content="Back to Shop" Grid.Row="0" Grid.Column="0" Margin="26,10,426,23" Click="Button_Click" />
+
+    </Grid>
+</Window>

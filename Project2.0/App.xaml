@@ -7,7 +7,7 @@
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="Gray"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontFamily" Value="Palatino Linotype"/>
             <Setter Property="FontSize" Value="18"/>
 
             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -16,24 +16,27 @@
         <Style TargetType="Button">
             <Setter Property="Foreground" Value="Gray"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontFamily" Value="Palatino Linotype"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style TargetType="ListBox">
             <Setter Property="Foreground" Value="Gray"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="FontFamily" Value="Arial"/>
-            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="Palatino Linotype"/>
+            <Setter Property="FontSize" Value="16"/>
 
         </Style>
         <Style TargetType="RadioButton">
             <Setter Property="Foreground" Value="Gray"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontFamily" Value="Palatino Linotype"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
 
         </Style>
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="Lavender"/>
+        </Style>
+        
     </Application.Resources>
 </Application>
