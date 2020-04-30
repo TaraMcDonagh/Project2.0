@@ -19,7 +19,8 @@ namespace Project2._0
     /// </summary>
     public partial class Window2 : Window
     {
- 
+        Order db = new Order();
+        //attempt to keep a total going
         decimal total = 0;
         public Window2()
         {
@@ -40,13 +41,30 @@ namespace Project2._0
 
         private void AddToDatabase_Click(object sender, RoutedEventArgs e)
         {
+            Order db = new Order();
 
+            using (db)
+            {
+                foreach (Items item in Items.CartItems)
+                {
+                    db.Orders.Add(item);
+                }
+                db.SaveChanges();
+                this.Close();
+            }
+        }
+        private void RefreshPage()
+        {
+            //refreshing the box
+            lbxCartItems.ItemsSource = null;
+            lbxCartItems.ItemsSource = Items.CartItems;
         }
 
         private void RemoveItem_Click(object sender, RoutedEventArgs e)
         {
             Items selectedItems = lbxCartItems.SelectedItem as Items;
             Items.CartItems.Remove(selectedItems);
+            RefreshPage();
 
         }
     }

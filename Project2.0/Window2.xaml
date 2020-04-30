@@ -19,14 +19,14 @@
 
         </Grid.ColumnDefinitions>
 
-        <Image Source="H:\Oop\Semester 2\Project\Project2.0\Project2.0\images\BeYouTiful.jpg" Grid.Row="0" Margin="284,10,44,2" />
+        <Image Source="H:\Oop\Semester 2\Project\Project2.0\Project2.0\images\BeYouTiful.jpg" Grid.Row="0" Margin="272,10,10,23" Grid.RowSpan="2" />
         <Button Name="Backtoshop" Content="Back to Shop" Grid.Row="0" Grid.Column="0" Margin="4,10,386,23" Click="Button_Click" Height="20" Width="86" />
-        <Button Name="RemoveItem"  Content=" Remove item" Grid.Row="2" Grid.Column="1" Margin="126,91,106,203" RenderTransformOrigin="0.5,0.5" Width="84" Click="RemoveItem_Click">
-           
+        <Button Name="RemoveItem"  Content=" Remove item" Grid.Row="2" Grid.Column="1" Margin="126,81,106,203" RenderTransformOrigin="0.5,0.5" Width="84" Click="RemoveItem_Click" Height="30">
+
         </Button>
         <Label Content="Your Basket" Grid.Column="0" Grid.Row="1" Height="34" Margin="186,9,182,9" Width="108"/>
         <ListBox Name="lbxCartItems" Grid.Row="2" Grid.Column="0" Margin="10"/>
-        <Button Name="AddToDatabase" Content="Check Out" Grid.Column="1" Grid.Row="2" Click="AddToDatabase_Click"/>
+        <Button Name="AddToDatabase" Content="Check Out" Grid.Column="1" Grid.Row="2" Click="AddToDatabase_Click" Height="29" Margin="126,138,106,147" Width="84"/>
 
     </Grid>
 </Window>
