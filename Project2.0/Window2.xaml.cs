@@ -19,7 +19,8 @@ namespace Project2._0
     /// </summary>
     public partial class Window2 : Window
     {
-
+ 
+        decimal total = 0;
         public Window2()
         {
             InitializeComponent();
@@ -32,7 +33,20 @@ namespace Project2._0
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
             lbxCartItems.ItemsSource = Items.CartItems;
+            
+        }
+
+        private void AddToDatabase_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveItem_Click(object sender, RoutedEventArgs e)
+        {
+            Items selectedItems = lbxCartItems.SelectedItem as Items;
+            Items.CartItems.Remove(selectedItems);
 
         }
     }

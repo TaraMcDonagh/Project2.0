@@ -143,6 +143,7 @@ namespace Project2._0
             Cost = 30m
         };
         decimal total = 0;
+        static public decimal costTotal = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -188,7 +189,8 @@ namespace Project2._0
                 Items.CartItems.Add(selectedItem);
 
                 total++;
-                NoOfItems.Text = string.Format("{0}", total);
+                NoOfItems.Text = string.Format("{0} ",  total);
+                costTotal += selectedItem.Cost;
             }
             else
             {
