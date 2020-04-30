@@ -23,6 +23,8 @@ namespace Project2._0
         List<Items> allProducts = new List<Items>();
         List<Items> selectedProducts = new List<Items>();
         List<Items> filteredProducts = new List<Items>();
+       public static List<Items> CartItems = new List<Items>();
+
         decimal total = 0;
         public MainWindow()
         {
@@ -190,7 +192,7 @@ namespace Project2._0
             Items selectedItem = lbxProducts.SelectedItem as Items;
             if (selectedItem != null)
             {
-
+                CartItems.Add(selectedItem);
 
                 total++;
                 NoOfItems.Text = string.Format("{0}", total);
