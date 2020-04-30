@@ -20,11 +20,6 @@ namespace Project2._0
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Items> allProducts = new List<Items>();
-        List<Items> selectedProducts = new List<Items>();
-        List<Items> filteredProducts = new List<Items>();
-       public static List<Items> CartItems = new List<Items>();
-
         decimal total = 0;
         public MainWindow()
         {
@@ -39,152 +34,13 @@ namespace Project2._0
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //create some activity objects
-            Items l1 = new Items()
-            {
-                ProductName = "Matte Revolution",
-                Brand = "CHARLOTTE TILBURY",
-                TypeOfProduct = ProductType.Lips,
-                Cost = 32m
-            };
 
-            Items l2 = new Items()
-            {
-                ProductName = "Power Bullet Matte Lipstick",
-                Brand = "HUDA BEAUTY",
-                TypeOfProduct = ProductType.Lips,
-                Cost = 25m
-            };
 
-            Items l3 = new Items()
-            {
-                ProductName = "Nudies Matte Blush & Bronze",
-                Brand = "NUDESTIX",
-                TypeOfProduct = ProductType.Lips,
-                Cost = 35m
-            };
-
-            Items l4 = new Items()
-            {
-                ProductName = "Lip Injection Extreme ",
-                Brand = "TOO FACED",
-                TypeOfProduct = ProductType.Lips,
-                Cost = 26m
-            };
-
-            Items e1 = new Items()
-            {
-                ProductName = "Bigger, Brighter Eyes - Exaggereyes",
-                Brand = "CHARLOTTE TILBURY",
-                TypeOfProduct = ProductType.Eyes,
-                Cost = 55m
-            };
-
-            Items e2 = new Items()
-            {
-                ProductName = "Sunrise Palette",
-                Brand = "NATASHA DENONA",
-                TypeOfProduct = ProductType.Eyes,
-                Cost = 75m
-            };
-
-            Items e3 = new Items()
-            {
-                ProductName = "Rose Gold Remastered Palette",
-                Brand = "HUDA BEAUTY",
-                TypeOfProduct = ProductType.Eyes,
-                Cost = 60m
-            };
-
-            Items e4 = new Items()
-            {
-                ProductName = "Soft Glam Eye Shadow Palette",
-                Brand = "ANASTASIA BEVERLY HILLS",
-                TypeOfProduct = ProductType.Eyes,
-                Cost = 40m
-            };
-            Items f1 = new Items()
-            {
-                ProductName = "Airbrush Flawless Foundation",
-                Brand = "CHARLOTTE TILBURY",
-                TypeOfProduct = ProductType.Face,
-                Cost = 40m
-            };
-
-            Items f2 = new Items()
-            {
-                ProductName = "Sheer Glow Foundation",
-                Brand = "NARS",
-                TypeOfProduct = ProductType.Face,
-                Cost = 41m
-            };
-
-            Items f3 = new Items()
-            {
-                ProductName = "Shimmering Skin Perfector Pressed Highlighter",
-                Brand = "BECCA",
-                TypeOfProduct = ProductType.Face,
-                Cost = 38m
-            };
-
-            Items f4 = new Items()
-            {
-                ProductName = "Shimmering Skin Perfector Luminous Blush",
-                Brand = "BECCA",
-                TypeOfProduct = ProductType.Face,
-                Cost = 34m
-            };
-            Items s1 = new Items()
-            {
-                ProductName = "Dermaflash Luxe",
-                Brand = "DERMAFLASH",
-                TypeOfProduct = ProductType.Skincare,
-                Cost = 220m
-            };
-            Items s2 = new Items()
-            {
-                ProductName = "Watermelon Glow Pink Juice Moisturizer",
-                Brand = "GLOW RECIPE",
-                TypeOfProduct = ProductType.Skincare,
-                Cost = 26m
-            };
-            Items s3 = new Items()
-            {
-                ProductName = "100 % Organic Cold - Pressed Rose Hip Seed Oil",
-                Brand = "THE ORDINARY",
-                TypeOfProduct = ProductType.Skincare,
-                Cost = 15m
-            };
-            Items s4 = new Items()
-            {
-                ProductName = "Lait - Creme Concentre",
-                Brand = "EMBRYOLISSE LABORATORIES",
-                TypeOfProduct = ProductType.Skincare,
-                Cost = 30m
-            };
-            //adding the activities to the list created above
-            allProducts.Add(l1);
-            allProducts.Add(l2);
-            allProducts.Add(l3);
-            allProducts.Add(l4);
-            allProducts.Add(e1);
-            allProducts.Add(e2);
-            allProducts.Add(e3);
-            allProducts.Add(e4);
-            allProducts.Add(f1);
-            allProducts.Add(f2);
-            allProducts.Add(f3);
-            allProducts.Add(f4);
-            allProducts.Add(s1);
-            allProducts.Add(s2);
-            allProducts.Add(s3);
-            allProducts.Add(s4);
-
-            allProducts.Sort();
-            allProducts.Reverse();
+            Items.allProducts.Sort();
+            Items.allProducts.Reverse();
 
             //Displaying them in the listbox
-            lbxProducts.ItemsSource = allProducts;
+            lbxProducts.ItemsSource = Items.allProducts;
         }
 
         private void AddToCartBtn_Click(object sender, RoutedEventArgs e)
@@ -192,7 +48,7 @@ namespace Project2._0
             Items selectedItem = lbxProducts.SelectedItem as Items;
             if (selectedItem != null)
             {
-                CartItems.Add(selectedItem);
+                Items.CartItems.Add(selectedItem);
 
                 total++;
                 NoOfItems.Text = string.Format("{0}", total);
@@ -207,12 +63,12 @@ namespace Project2._0
         {
             //refreshing the box
             lbxProducts.ItemsSource = null;
-            lbxProducts.ItemsSource = allProducts;
+            lbxProducts.ItemsSource = Items.allProducts;
         }
 
         private void rb_All_Checked(object sender, RoutedEventArgs e)
         {
-            filteredProducts.Clear();
+            Items.filteredProducts.Clear();
             if (rb_All.IsChecked == true)
             {
 
@@ -220,52 +76,52 @@ namespace Project2._0
             }
             else if (rb_Face.IsChecked == true)
             {
-                foreach (Items item in allProducts)
+                foreach (Items item in Items.allProducts)
                 {
                     if (item.TypeOfProduct == ProductType.Face)
                     {
-                        filteredProducts.Add(item);
+                        Items.filteredProducts.Add(item);
                         lbxProducts.ItemsSource = null;
-                        lbxProducts.ItemsSource = filteredProducts;
+                        lbxProducts.ItemsSource = Items.filteredProducts;
 
                     }
                 }
             }
             else if (rb_Eyes.IsChecked == true)
             {
-                foreach (Items item in allProducts)
+                foreach (Items item in Items.allProducts)
                 {
                     if (item.TypeOfProduct == ProductType.Eyes)
                     {
-                        filteredProducts.Add(item);
+                        Items.filteredProducts.Add(item);
                         lbxProducts.ItemsSource = null;
-                        lbxProducts.ItemsSource = filteredProducts;
+                        lbxProducts.ItemsSource = Items.filteredProducts;
 
                     }
                 }
             }
             else if (rb_Lips.IsChecked == true)
             {
-                foreach (Items item in allProducts)
+                foreach (Items item in Items.allProducts)
                 {
                     if (item.TypeOfProduct == ProductType.Lips)
                     {
-                        filteredProducts.Add(item);
+                        Items.filteredProducts.Add(item);
                         lbxProducts.ItemsSource = null;
-                        lbxProducts.ItemsSource = filteredProducts;
+                        lbxProducts.ItemsSource = Items.filteredProducts;
 
                     }
                 }
             }
             else if (rb_Skin.IsChecked == true)
             {
-                foreach (Items item in allProducts)
+                foreach (Items item in Items.allProducts)
                 {
                     if (item.TypeOfProduct == ProductType.Skincare)
                     {
-                        filteredProducts.Add(item);
+                        Items.filteredProducts.Add(item);
                         lbxProducts.ItemsSource = null;
-                        lbxProducts.ItemsSource = filteredProducts;
+                        lbxProducts.ItemsSource = Items.filteredProducts;
 
                     }
                 }
