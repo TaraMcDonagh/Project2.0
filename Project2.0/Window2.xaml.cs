@@ -17,6 +17,7 @@ namespace Project2._0
     /// <summary>
     /// Interaction logic for Window2.xaml
     /// </summary>
+
     public partial class Window2 : Window
     {
         Order db = new Order();
@@ -41,10 +42,9 @@ namespace Project2._0
 
         private void AddToDatabase_Click(object sender, RoutedEventArgs e)
         {
-            Order db = new Order();
-
-            using (db)
+            try
             {
+
                 foreach (Items item in Items.CartItems)
                 {
                     db.Orders.Add(item);
@@ -52,6 +52,14 @@ namespace Project2._0
                 db.SaveChanges();
                 this.Close();
             }
+            catch (Exception ex)
+            {
+                string msg = "Insert Error";
+                msg += ex.Message;
+                throw new Exception(msg);
+
+            }
+
         }
         private void RefreshPage()
         {
@@ -67,5 +75,6 @@ namespace Project2._0
             RefreshPage();
 
         }
+       
     }
 }

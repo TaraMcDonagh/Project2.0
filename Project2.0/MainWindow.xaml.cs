@@ -20,6 +20,8 @@ namespace Project2._0
     /// </summary>
     public partial class MainWindow : Window
     {
+        Order db = new Order();
+
         Items l1 = new Items()
         {
             ProductName = "Matte Revolution",
@@ -173,7 +175,7 @@ namespace Project2._0
             Items.allProducts.Add(s2);
             Items.allProducts.Add(s3);
             Items.allProducts.Add(s4);
-
+           // db.Orders.Add(l1);
             Items.allProducts.Sort();
             Items.allProducts.Reverse();
 

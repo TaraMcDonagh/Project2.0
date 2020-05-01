@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace Project2._0
         public decimal Cost { get; set; }
         public ProductType TypeOfProduct { get; set; }
         //setting up parts for the database
-        public Random OrderNo {
+       /* public Random OrderNo {
             get { return orderno; }   // get method
             set { orderno = rand; }  // set method
         }
@@ -33,7 +34,7 @@ namespace Project2._0
         {
             get { return dateorder; }   // get method
             set { dateorder = DateTime.Now; }  // set method
-        }
+        }*/
 
         public static List<Items> allProducts = new List<Items>();
         public static List<Items> selectedProducts = new List<Items>();
@@ -75,7 +76,8 @@ namespace Project2._0
     //Setting up my database
     public class Order : DbContext
     {
-        public Order():base("Order Histpry") { }
+
+        public Order():base("Order History") { }
         public DbSet<Items> Orders { get; set; }
     }
 }
