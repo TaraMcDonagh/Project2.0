@@ -11,7 +11,6 @@ namespace DatabaseTest
     {
         static void Main(string[] args)
         {
-            item
         }
     }
 }

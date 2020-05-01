@@ -22,7 +22,7 @@ namespace Project2._0
     {
         Order db = new Order();
         //attempt to keep a total going
-        decimal total = 0;
+        decimal costTotal = 0;
         public Window2()
         {
             InitializeComponent();
@@ -37,9 +37,17 @@ namespace Project2._0
         {
 
             lbxCartItems.ItemsSource = Items.CartItems;
-            
-        }
+           /* foreach (Items item in Items.CartItems)
+            {
+            Here i was trying to have a cart total which would be displayed but it wouldnt 
+            seperate the cost property from the list.
+                costTotal += Items.CartItems.Cost;
 
+            }*/
+
+        }
+        //This Button is supposed to add everything in the listbox to the databse to keep track of the order 
+        //but seeing as the database wont work the whole thing jams and freezes
         private void AddToDatabase_Click(object sender, RoutedEventArgs e)
         {
             try

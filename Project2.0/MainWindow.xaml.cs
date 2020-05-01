@@ -21,6 +21,8 @@ namespace Project2._0
     public partial class MainWindow : Window
     {
         Order db = new Order();
+        //When trying to add the items to lists in the items class it refused to show in the listbox 
+        //so i placed them here as they work in both windows
 
         Items l1 = new Items()
         {
@@ -192,7 +194,8 @@ namespace Project2._0
 
                 total++;
                 NoOfItems.Text = string.Format("{0} ",  total);
-                costTotal += selectedItem.Cost;
+                //testing to see if i can get the total of the items in cart here and it worked but it wouldnt work in the second window
+                //costTotal += selectedItem.Cost;
             }
             else
             {

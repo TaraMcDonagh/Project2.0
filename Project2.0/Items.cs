@@ -26,6 +26,8 @@ namespace Project2._0
         public decimal Cost { get; set; }
         public ProductType TypeOfProduct { get; set; }
         //setting up parts for the database
+        //I thought that maybe because there were extra properties in the items class that it wouldnt work
+        //but here i was hoping to set a random number as the order id no and the datetime function as the order date
        /* public Random OrderNo {
             get { return orderno; }   // get method
             set { orderno = rand; }  // set method
@@ -35,7 +37,7 @@ namespace Project2._0
             get { return dateorder; }   // get method
             set { dateorder = DateTime.Now; }  // set method
         }*/
-
+        //Lists - my lists are here because i tried them in the mainwindow but the second window couldnt access them
         public static List<Items> allProducts = new List<Items>();
         public static List<Items> selectedProducts = new List<Items>();
         public static List<Items> filteredProducts = new List<Items>();
@@ -73,7 +75,8 @@ namespace Project2._0
         }
 
     }
-    //Setting up my database
+    //Setting up my database i followed every step in the code first labsheet solution but it didnt work 
+    //I even tried setting it up in a console project but even after creating a relation the class and database wasnt found
     public class Order : DbContext
     {
 
